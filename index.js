@@ -38,7 +38,8 @@ function load()
 				loadScript('https://akukamil.github.io/corners/load_list.txt'),
 				loadScript('https://yandex.ru/games/sdk/v2')
 			]).then(function(){
-				console.log(load_list[0])
+				console.log(load_list[0]);
+				show_user_data();
 			})
 		
 		break;
@@ -52,7 +53,8 @@ function load()
 				loadScript('//vk.com/js/api/adman_init.js')
 				
 			]).then(function(){
-				console.log(load_list[0])
+				console.log(load_list[0]);
+				show_user_data();
 			})
 		
 		break;
