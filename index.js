@@ -26,7 +26,7 @@ function load()
 	
 	if (s.includes("vk.com") && s.includes("html5_android"))
 		platform="VK_MINIAPP";
-	
+	platform="VK_MINIAPP";
 	document.getElementById("log").innerHTML = s;
 	
 		
