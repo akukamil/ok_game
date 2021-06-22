@@ -1442,6 +1442,18 @@ var user_data={
 	req_result: "",
 	yndx_no_personal_data:0,
 	fb_error:0,
+	
+	
+	loadScript : function(src) {
+	  return new Promise((resolve, reject) => {
+		const script = document.createElement('script')
+		script.type = 'text/javascript'
+		script.onload = resolve
+		script.onerror = reject
+		script.src = src
+		document.head.appendChild(script)
+	  })
+	},
 			
 	vkbridge_events: function(e) {
 
@@ -1461,7 +1473,7 @@ var user_data={
 		if (s.includes("yandex")) {
 						
 			Promise.all([
-				loadScript('https://yandex.ru/games/sdk/v2')
+				this.loadScript('https://yandex.ru/games/sdk/v2')
 			]).then(function(){
 				this.yandex();	
 			})						
@@ -1470,9 +1482,9 @@ var user_data={
 		if (s.includes("vk.com") && s.includes("platform=web")) {
 			
 			Promise.all([
-				loadScript('https://vk.com/js/api/xd_connection.js?2'),
-				loadScript('//ad.mail.ru/static/admanhtml/rbadman-html5.min.js'),
-				loadScript('//vk.com/js/api/adman_init.js')
+				this.loadScript('https://vk.com/js/api/xd_connection.js?2'),
+				this.loadScript('//ad.mail.ru/static/admanhtml/rbadman-html5.min.js'),
+				this.loadScript('//vk.com/js/api/adman_init.js')
 				
 			]).then(function(){
 				this.vk_web()
@@ -1483,10 +1495,10 @@ var user_data={
 		if (s.includes("vk.com") && s.includes("html5_android")) {
 			
 			Promise.all([
-					loadScript('https://vk.com/js/api/xd_connection.js?2'),
-				loadScript('//ad.mail.ru/static/admanhtml/rbadman-html5.min.js'),
-				loadScript('//vk.com/js/api/adman_init.js'),
-				loadScript('https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js')		
+				this.loadScript('https://vk.com/js/api/xd_connection.js?2'),
+				this.loadScript('//ad.mail.ru/static/admanhtml/rbadman-html5.min.js'),
+				this.loadScript('//vk.com/js/api/adman_init.js'),
+				this.loadScript('https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js')		
 			]).then(function(){
 				this.vk_miniapp();	
 			})	
