@@ -113,8 +113,7 @@ function show_user_data() {
 		case "VK":
 		if(typeof(VK)==='undefined')
 		{		
-			load_user_data.req_result='vk_sdk_error';
-			load_user_data.process_results();	
+			alert("Ошибка вконтакте0");
 		}
 		else
 		{
@@ -140,6 +139,7 @@ function show_user_data() {
 							}	
 							else
 							{
+								console.log(data);
 								alert("Ошибка вконтакте1");
 							}
 						}
