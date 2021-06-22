@@ -69,7 +69,7 @@ function load()
 				loadScript('https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js')		
 			]).then(function(){
 				console.log(load_list[0]);
-				bridge.send('VKWebAppInit');
+				vkBridge.send('VKWebAppInit');
 					
 				show_user_data();
 			})
@@ -171,8 +171,8 @@ function show_user_data() {
 		
 				
 		case "VK_MINIAPP":		
-			bridge.send('VKWebAppGetUserInfo');
-			bridge.subscribe((e) => {
+			vkBridge.send('VKWebAppGetUserInfo');
+			vkBridge.subscribe((e) => {
 			if(e.type == 'VKWebAppGetUserInfoResult') {
 				alert("data");
 			document.getElementById("log").innerHTML=e.data.first_name;
