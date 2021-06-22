@@ -1452,7 +1452,7 @@ var user_data={
 			my_data.uid="vk"+e.detail.data.id;
 			my_data.pic_url=e.detail.data.photo_100;			
 		}	
-	}
+	},
 			
 	load: function() {
 						 
