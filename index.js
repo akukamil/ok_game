@@ -2,10 +2,14 @@ function load()
 {	
 	let s=window.location.href;
 	if (s.includes("yandex"))
-		document.getElementById("log").innerHTML = "YANDEX";
+		alert("YANDEX");
 	
-	if (s.includes("vk.com"))
-		document.getElementById("log").innerHTML = "VK";
+	if (s.includes("vk.com") || s.includes("platform=web"))
+		alert("VK");
+	
+	if (s.includes("vk.com") || s.includes("html5_android"))
+		alert("VK_MINIAPP");
+	
 	document.getElementById("log").innerHTML = s;
 	
 }
