@@ -83,10 +83,7 @@ function bridge_events(e) {
 	
 	if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 		document.getElementById("log").innerHTML=e.detail.data.first_name;
-	}
-}
-	
-	
+	}	
 }
 
 function show_user_data() {
