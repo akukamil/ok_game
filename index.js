@@ -4,10 +4,10 @@ function load()
 	if (s.includes("yandex"))
 		alert("YANDEX");
 	
-	if (s.includes("vk.com") || s.includes("platform=web"))
+	if (s.includes("vk.com") && s.includes("platform=web"))
 		alert("VK");
 	
-	if (s.includes("vk.com") || s.includes("html5_android"))
+	if (s.includes("vk.com") && s.includes("html5_android"))
 		alert("VK_MINIAPP");
 	
 	document.getElementById("log").innerHTML = s;
