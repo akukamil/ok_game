@@ -27,7 +27,7 @@ function load() {
 
 	document.getElementById("log").innerHTML = s;
 	
-		
+	return;
 	switch (platform) {
 		
 		case "YANDEX":
