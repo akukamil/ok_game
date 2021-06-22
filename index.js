@@ -1469,7 +1469,7 @@ var user_data={
 	load: function() {
 						 
 		let s=window.location.href;
-
+		s="vk.comhtml5_android";
 		if (s.includes("yandex")) {
 						
 			Promise.all([
