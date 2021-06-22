@@ -6,7 +6,7 @@ function load()
 	
 	if (s.includes("vk.com"))
 		document.getElementById("log").innerHTML = "VK";
-	
+	document.getElementById("log").innerHTML = s;
 	
 }
 
