@@ -1475,7 +1475,7 @@ var user_data={
 			Promise.all([
 				this.loadScript('https://yandex.ru/games/sdk/v2')
 			]).then(function(){
-				this.yandex();	
+				user_data.yandex();	
 			})						
 		}
 				
@@ -1487,7 +1487,7 @@ var user_data={
 				this.loadScript('//vk.com/js/api/adman_init.js')
 				
 			]).then(function(){
-				this.vk_web()
+				user_data.vk_web()
 			})
 			;			
 		}
@@ -1500,7 +1500,7 @@ var user_data={
 				this.loadScript('//vk.com/js/api/adman_init.js'),
 				this.loadScript('https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js')		
 			]).then(function(){
-				this.vk_miniapp();	
+				user_data.vk_miniapp();	
 			})	
 					
 		}
