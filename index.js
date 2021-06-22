@@ -173,7 +173,7 @@ function show_user_data() {
 		case "VK_MINIAPP":		
 			bridge.send('VKWebAppGetUserInfo');
 			bridge.subscribe((e) => {
-			if(e.type == ‘VKWebAppGetUserInfoResult’) {
+			if(e.type == 'VKWebAppGetUserInfoResult') {
 			document.getElementById("log").innerHTML=e.data.first_name;
 			}});
 		
