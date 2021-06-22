@@ -174,6 +174,7 @@ function show_user_data() {
 			bridge.send('VKWebAppGetUserInfo');
 			bridge.subscribe((e) => {
 			if(e.type == 'VKWebAppGetUserInfoResult') {
+				alert("data");
 			document.getElementById("log").innerHTML=e.data.first_name;
 			}});
 		
