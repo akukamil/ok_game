@@ -70,12 +70,24 @@ function load()
 			]).then(function(){
 				console.log(load_list[0]);
 				bridge.send(“VKWebAppInit", {});
+				bridge.subscribe((e) => bridge_events(e));
+				
 				show_user_data();
 			})
 		
 		
 		break;
 	};
+}
+
+function bridge_events(e) {
+	
+	if (e.detail.type === 'VKWebAppGetUserInfoResult') {
+		document.getElementById("log").innerHTML=e.detail.data.first_name;
+	}
+}
+	
+	
 }
 
 function show_user_data() {
@@ -163,14 +175,7 @@ function show_user_data() {
 		
 				
 		case "VK_MINIAPP":		
-			bridge
-			  .send('VKWebAppGetUserInfo')
-			  .then(data => {
-				document.getElementById("log").innerHTML=data.first_name;
-			  })
-			  .catch(error => {
-				document.getElementById("log").innerHTML=error;
-			  });
+			bridge.send('VKWebAppGetUserInfo');
 		
 		break;
 	}
