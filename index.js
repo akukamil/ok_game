@@ -1443,7 +1443,7 @@ var user_data={
 	yndx_no_personal_data:0,
 	fb_error:0,
 			
-	vkbridge_events=function(e) {
+	vkbridge_events: function(e) {
 
 		if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 			
