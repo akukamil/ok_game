@@ -85,7 +85,7 @@ function bridge_events(e) {
     admanInit({
       user_id: e.detail.data.id,
       app_id: 7885384,
-      mobile: false,
+      mobile: true,
       type: 'rewarded' 			// 'preloader' or 'rewarded' (default - 'preloader')
       // params: {preview: 1}   // to verify the correct operation of advertising
     }, onAdsReady, onNoAds);
