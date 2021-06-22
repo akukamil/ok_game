@@ -1,7 +1,6 @@
 function load()
 {	
-	console.log(window.location.search);
-	console.log(window.location.href);
+	console.log("LOC: "+window.location.href);
 }
 
 
