@@ -1462,7 +1462,9 @@ var user_data={
 			my_data.first_name=e.detail.data.first_name;
 			my_data.last_name=e.detail.data.last_name;
 			my_data.uid="vk"+e.detail.data.id;
-			my_data.pic_url=e.detail.data.photo_100;			
+			my_data.pic_url=e.detail.data.photo_100;
+			user_data.req_result="ok";	
+			user_data.process_results();			
 		}	
 	},
 			
