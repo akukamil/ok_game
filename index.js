@@ -13,20 +13,18 @@ function loadScript (src) {
   })
 }
 
-
-function load()
-{	
+function load() {	
 	let s=window.location.href;
 
 	if (s.includes("yandex"))
 		platform="YANDEX";
 	
 	if (s.includes("vk.com") && s.includes("platform=web"))
-		platform="VK";
+		platform="VK_MINIAPP";
 	
 	if (s.includes("vk.com") && s.includes("html5_android"))
 		platform="VK_MINIAPP";
-	platform="VK_MINIAPP";
+
 	document.getElementById("log").innerHTML = s;
 	
 		
@@ -70,11 +68,9 @@ function load()
 			]).then(function(){
 				console.log(load_list[0]);
 				vkBridge.subscribe((e) => bridge_events(e)); 
-				vkBridge.send('VKWebAppInit');
-					
+				vkBridge.send('VKWebAppInit');					
 				show_user_data();
-			})
-		
+			})		
 		
 		break;
 	};
@@ -84,6 +80,26 @@ function bridge_events(e) {
 	console.log(e);
 	if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 		document.getElementById("log").innerHTML=e.detail.data.first_name;
+		
+		
+    admanInit({
+      user_id: e.detail.data.id,
+      app_id: 7885384,
+      mobile: false,
+      type: 'rewarded' 			// 'preloader' or 'rewarded' (default - 'preloader')
+      // params: {preview: 1}   // to verify the correct operation of advertising
+    }, onAdsReady, onNoAds);
+ 
+    function onAdsReady(adman) {
+      adman.onStarted(function () {});
+      adman.onCompleted(function() {});
+      adman.onSkipped(function() {});      
+      adman.onClicked(function() {}); 
+      adman.start('preroll');
+    };
+    function onNoAds() {};
+		
+		
 	}	
 }
 
@@ -172,8 +188,7 @@ function show_user_data() {
 		
 				
 		case "VK_MINIAPP":		
-			vkBridge.send('VKWebAppGetUserInfo');
-		
+			vkBridge.send('VKWebAppGetUserInfo');		
 		break;
 	}
 	
