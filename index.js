@@ -76,6 +76,8 @@ function load()
 
 function show_user_data() {
 	
+	switch (platform) {
+	
 		case "YANDEX":
 		
 			if(typeof(YaGames)==='undefined')
@@ -155,13 +157,11 @@ function show_user_data() {
 		
 		break;
 		
-		
-		
-		case "VK_MINIAPP":
 				
+		case "VK_MINIAPP":			
 		
 		break;
+	}
 	
 	
 }
-
