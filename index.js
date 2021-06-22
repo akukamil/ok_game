@@ -70,8 +70,7 @@ function load()
 			]).then(function(){
 				console.log(load_list[0]);
 				bridge.send(“VKWebAppInit", {});
-				bridge.subscribe((e) => bridge_events(e));
-				
+					
 				show_user_data();
 			})
 		
@@ -176,6 +175,10 @@ function show_user_data() {
 				
 		case "VK_MINIAPP":		
 			bridge.send('VKWebAppGetUserInfo');
+			bridge.subscribe((e) => {
+			if(e.type == ‘VKWebAppGetUserInfoResult’) {
+			document.getElementById("log").innerHTML=e.data.first_name;
+			}});
 		
 		break;
 	}
