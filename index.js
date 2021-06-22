@@ -1619,6 +1619,7 @@ var user_data={
 		platform="VK_MINIAPP";
 		vkBridge.subscribe((e) => this.vkbridge_events(e)); 
 		vkBridge.send('VKWebAppInit');	
+		vkBridge.send('VKWebAppGetUserInfo');	
 		
 	},
 
