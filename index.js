@@ -1,6 +1,13 @@
 function load()
 {	
-	document.getElementById("log").innerHTML = window.location.href;
+	let s=window.location.href;
+	if (s.includes("yandex"))
+		document.getElementById("log").innerHTML = "YANDEX";
+	
+	if (s.includes("vk.com"))
+		document.getElementById("log").innerHTML = "VK";
+	
+	
 }
 
 
