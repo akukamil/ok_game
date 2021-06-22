@@ -1,6 +1,6 @@
 function load()
 {	
-	console.log("LOC: "+window.location.href);
+	document.body.innerHTML = "+window.location.href;
 }
 
 
