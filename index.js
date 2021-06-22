@@ -69,7 +69,7 @@ function load()
 				loadScript('https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js')		
 			]).then(function(){
 				console.log(load_list[0]);
-				bridge.send(“VKWebAppInit");
+				bridge.send('VKWebAppInit');
 					
 				show_user_data();
 			})
